@@ -1,0 +1,499 @@
+/*
+Theme Name: MLM Wizards
+Author: Maciej Wloch
+Author URI: http://mlmwizards.pl/
+Description: First and main theme made in 2014.
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: mlmwizards
+
+This theme can be only used at mlmwizards.pl
+*/
+@charset 'UTF-8';
+@import url(http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext);
+	
+* { margin: 0; padding: 0; border: 0; }
+
+body {
+	font-family: Arial, Verdana, Tahoma;
+	font-size: 14px;
+	color: rgb( 89, 89, 89 );
+	background-color: rgb( 255, 255, 255 );
+}
+a {
+	color: rgb( 5, 97, 127 );
+	text-decoration: none;
+}
+a:hover {
+	color: rgb( 10, 153, 199 );
+}
+input,
+select,
+textarea {
+	font-family: Arial, Verdana, Tahoma;
+	font-size: 13px;
+}
+.clear:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+
+#header,
+#main,
+#footer {
+	width: 900px;
+}
+
+/**** TOP ****/
+	#header {
+		margin: 5px auto 5px auto;
+	}
+	/**** TOP MENU ****/
+	#topMenu {
+		border-bottom: 1px rgb( 255, 255, 255 ) solid;
+		width: 100%;
+		height: 45px;
+		background-color: rgb( 63, 63, 63 );
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 1;
+	}
+	#topMenu a {
+		color: rgb( 255, 255, 255 );
+	}
+	#topMenu ul,
+	#topMenu ul li {
+		list-style: none;
+	}
+	#topMenu ul {
+		font-size: 16px;
+		float: right;
+	}
+	#topMenu ul li {
+		display: inline-block;
+	}
+	#topMenu ul li a {
+		padding: 8px 42px;
+		position: relative;
+		display: block;
+		-webkit-transition: color .5s;
+		-moz-transition: color .5s;
+		-o-transition: color .5s;
+		transitions: color .5s;
+	}
+	#topMenu ul li a:hover {
+		color: rgb( 167, 167, 167 );
+	}
+	#topMenu ul li a.active {
+		background-color: rgb( 59, 130, 180 );
+		/* Safari 4-5, Chrome 1-9 */
+		background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb( 124, 172, 205 )), to(rgb( 59, 130, 180 )));
+		/* Safari 5.1, Chrome 10+ */
+		background: -webkit-linear-gradient(top, rgb( 124, 172, 205 ), rgb( 59, 130, 180 ));
+		/* Firefox 3.6+ */
+		background: -moz-linear-gradient(top, rgb( 124, 172, 205 ), rgb( 59, 130, 180 ));
+		/* IE 10 */
+		background: -ms-linear-gradient(top, rgb( 124, 172, 205 ), rgb( 59, 130, 180 ));
+		/* Opera 11.10+ */
+		background: -o-linear-gradient(top, rgb( 124, 172, 205 ), rgb( 59, 130, 180 ));
+	}
+	#topMenu ul li a.active:hover {
+		color: rgb( 255, 255, 255 );
+	}
+	#topMenu ul li a.active:before {
+		content: '';
+		width: 0;
+		height: 0;
+		border-left: 0 solid transparent;
+		border-right: 12px solid transparent;
+		border-top: 13px solid rgb( 63, 63, 63 );
+		display: block;
+		position: absolute;
+		top: 0px;
+		left: 0px;
+	}
+	#topMenu ul li a.active:after {
+		content: '';
+		width: 0;
+		height: 0;
+		border-left: 12px solid transparent;
+		border-right: 0 solid transparent;
+		border-bottom: 13px solid rgb( 63, 63, 63 );
+		display: block;
+		position: absolute;
+		right: 0px;
+		bottom: 0px;
+	}
+	/**** /TOP MENU ****/
+	/**** SEARCH FORM ****/
+	#search {
+		border: 1px rgb( 80, 80, 80 ) solid;
+		border-radius: 4px;
+		float: right;
+	}
+	#search input {
+		background: none;
+		display: inline-block;
+		vertical-align: middle;
+	}
+	#search input[type="text"] {
+		width: 76px;
+		padding-left: 2px;
+		font-size: 14px;
+		color: rgb( 142, 142, 142 );
+		text-align: center;
+		line-height: 32px;
+	}
+	#search input[type="text"]:focus {
+		background: none;
+		box-shadow: none;
+		outline: none;
+	}
+	#search input[type="image"] {
+		margin-right: 6px;
+	}
+	/**** /SEARCH FORM ****/
+	
+	#logoOverLayer {
+		border-bottom: 1px rgb( 202, 202, 202 ) solid;
+		padding-top: 46px;
+		height: 345px;
+		background: rgb( 221, 221, 221 ) url( '../images/topBackground.jpg' );
+		box-shadow: inset 0 -1px 0 rgba( 255, 255, 255, .4 );
+		position: relative;
+	}
+	#logoLayer {
+		width: 100%;
+		height: 100%;
+		background-image: url( '../images/topBackgroundBig.jpg' );
+		background-repeat: no-repeat;
+		background-position: center;
+	}
+	#logo {
+		margin-left: -208px;
+		position: absolute;
+		top: 143px;
+		left: 50%;
+	}
+	#logo2 {
+		margin-left: -431px;
+		position: absolute;
+		top: 85px;
+		left: 50%;
+	}
+	
+	/**** NEWSLETTER ****/
+	#newsletter {
+		margin-left: -462px;
+		width: 912px;
+		height: 113px;
+		background-color: rgb( 59, 130, 181 );
+		background-image: url( '../images/newsletterBackground.jpg' );
+		position: absolute;
+		top: 340px;
+		left: 50%;
+	}
+	#newsletter:before {
+		content: '';
+		width: 401px;
+		height: 24px;
+		background-image: url( '../images/newsletterShadowLeft.png' );
+		display: block;
+		position: absolute;
+		left: 0;
+		bottom: -24px;
+	}
+	#newsletter:after {
+		content: '';
+		width: 385px;
+		height: 27px;
+		background-image: url( '../images/newsletterShadowRight.png' );
+		display: block;
+		position: absolute;
+		right: 8px;
+		bottom: -27px;
+	}
+	#newsletter p {
+		padding-top: 22px;
+		padding-bottom: 30px;
+		margin-left: 85px;
+		margin-right: 6px;
+		width: 364px;
+		font-family: 'Lato', sans-serif;
+		font-size: 18px;
+		color: rgb( 229, 229, 229 );
+		text-align: justify;
+		text-shadow: 1px 1px 0 rgba( 0, 0, 0, .4 );
+		line-height: 30px;
+		display: inline-block;
+		vertical-align: middle;	
+	}
+	#newsletter b,
+	#newsletter strong {
+		color: rgb( 255, 255, 255 );
+	}
+	#newsletter input {
+		display: inline-block;
+	}
+	#newsletter input[type="text"],
+	#newsletter input[type="email"] {
+		border: 1px rgb( 35, 114, 146 ) solid;
+		width: 107px;
+		padding: 9px 8px;
+		color: rgb( 91, 91, 91 );
+		box-shadow: inset 5px 5px 3px rgba( 0, 0, 0, .14 );
+	}
+	#newsletter input[type="submit"] {
+		border: 1px rgb( 47, 47, 47 ) solid;
+		padding: 9px 10px;
+		color: rgb( 201, 201, 201 );
+		text-shadow: 1px 1px 0 rgb( 0, 0, 0 );
+		cursor: pointer;
+		background-color: rgb( 70, 70, 70 );
+		/* Safari 4-5, Chrome 1-9 */
+		background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb( 70, 70, 70 )), to(rgb( 45, 45, 45 )));
+		/* Safari 5.1, Chrome 10+ */
+		background: -webkit-linear-gradient(top, rgb( 70, 70, 70 ), rgb( 45, 45, 45 ));
+		/* Firefox 3.6+ */
+		background: -moz-linear-gradient(top, rgb( 70, 70, 70 ), rgb( 45, 45, 45 ));
+		/* IE 10 */
+		background: -ms-linear-gradient(top, rgb( 70, 70, 70 ), rgb( 45, 45, 45 ));
+		/* Opera 11.10+ */
+		background: -o-linear-gradient(top, rgb( 70, 70, 70 ), rgb( 45, 45, 45 ));
+	}
+	/**** /NEWSLETTER ****/
+/**** /TOP ****/
+/**** MAIN ****/
+	#main {
+		margin: 77px auto 0 auto;
+	}
+	#content {
+		margin-top: 8px;
+		margin-left: 30px;
+		width: 582px;
+		float: left;
+	}
+	
+	/**** POST ****/
+	.post {
+		padding-top: 9px;
+		margin-bottom: 9px;
+		text-align: justify;
+		box-shadow: inset 0 -25px 25px -15px rgba( 101, 101, 101, .1 );
+	}
+	.post .date {
+		margin-right: 6px;
+		border-top-left-radius: 5px;
+		border-bottom-left-radius: 5px;
+		padding-top: 2px;
+		padding-bottom: 3px;
+		width: 40px;
+		font-size: 12px;
+		line-height: 16px;
+		text-align: center;
+		background: rgb( 255, 205, 86 );
+		background: -moz-linear-gradient(top,  #fede8f 0%, #ffcd56 40%, #ffcd56 100%); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fede8f), color-stop(40%,#ffcd56), color-stop(100%,#ffcd56)); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top,  #fede8f 0%,#ffcd56 40%,#ffcd56 100%); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top,  #fede8f 0%,#ffcd56 40%,#ffcd56 100%); /* Opera 11.10+ */
+		background: -ms-linear-gradient(top,  #fede8f 0%,#ffcd56 40%,#ffcd56 100%); /* IE10+ */
+		background: linear-gradient(to bottom,  #fede8f 0%,#ffcd56 40%,#ffcd56 100%); /* W3C */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fede8f', endColorstr='#ffcd56',GradientType=0 ); /* IE6-9 */
+		float: left;
+	}
+	.post .date .dayNumber {
+		font-size: 22px;
+		line-height: 28px;
+		display: block;
+	}
+	.post .title {
+		font-size: 33px;
+		font-weight: normal;
+		line-height: 49px;
+	}
+	.post .title a {
+		color: rgb( 78, 77, 77 );
+	}
+	.post p {
+		padding-top: 7px;
+		padding-left: 5px;
+		padding-bottom: 7px;
+		line-height: 20px;
+	}
+	.post .image {
+		margin-top: 5px;
+		margin-left: 20px;
+		margin-bottom: 3px;
+		border: 1px rgb( 215, 215, 215 ) solid;
+		padding: 9px;
+		float: right;
+	}
+	.post .more {
+		border-bottom: 1px rgb( 5, 97, 127 ) dotted;
+		width: 222px;
+		padding-top: 6px;
+		padding-right: 10px;
+		padding-bottom: 6px;
+		text-align: right;
+		float: right;
+	}
+	/**** /POST ****/
+	#content-2nd {
+		margin-right: 12px;
+		width: 252px;
+		color: rgb( 57, 57, 57 );
+		float: right;
+	}
+	#content-2nd ul,
+	#content-2nd ul li {
+		list-style: none;
+	}
+	#content-2nd .boxBorder {
+		border: 1px rgb( 229, 229, 229 ) solid;
+	}
+	#content-2nd .boxBackground {
+		background-color: rgb( 249, 249, 249 );
+	}
+	#content-2nd .boxMargin {
+		margin-bottom: 8px;
+	}
+	#content-2nd .box .title {
+		padding-left: 50px;
+		font-size: 14px;
+		font-weight: normal;
+		color: rgb( 255, 255, 255 );
+		line-height: 53px;
+		background: rgb( 32, 108, 167 ) url( '../images/boxTitleBackground.png' ) center repeat-x;
+		position: relative;
+	}
+	#content-2nd .box .title:before {
+		content: '';
+		width: 0;
+		height: 0;
+		border-top: 23px solid transparent;
+		border-left: 39px rgb( 255, 255, 255 ) solid;
+		border-bottom: 23px solid transparent;
+		display: block;
+		position: absolute;
+		top: 3px;
+		left: 0;
+	}
+	#content-2nd .box ul {
+		padding: 10px 0 10px 10px;
+		font-size: 13px;
+	}
+	#content-2nd .box ul li {
+		padding-top: 6px;
+		padding-bottom: 6px;
+	}
+	#content-2nd .box .comments {
+		padding-left: 21px;
+		font-size: 11px;
+		color: rgb( 79, 79, 79 );
+		background-image: url( '../images/commentsSmall.png' );
+		background-position: left center;
+		background-repeat: no-repeat;
+	}
+	/**** ABOUT ME ****/
+		#aboutMe {
+			padding: 8px;
+		}
+		#aboutMe p {
+			line-height: 20px;
+		}
+		#aboutMe img {
+			margin-left: 10px;
+			float: right;
+		}
+		#aboutMe .more {
+			margin: 10px auto 0 auto;
+			border: 1px rgb( 226, 226, 226 ) solid;
+			border-radius: 8px;
+			width: 174px;
+			color: rgb( 103, 103, 103 );
+			text-align: center;
+			line-height: 36px;
+			background-color: rgb( 232, 232, 232 );
+			display: block;
+		}
+		#aboutMe .more:hover {
+			background-color: rgb( 226, 226, 226 );
+		}
+	/**** /ABOUT ME ****/
+	/**** NEWSLETTER BOX ****/
+		#newsletterBox {
+			padding: 9px 18px;
+			font-family: 'Lato', sans-serif;
+			font-size: 12px;
+		}
+		#newsletterBox h3 {
+			font-size: 18px;
+			color: rgb( 39, 39, 39 );
+			text-align: center;
+		}
+		#newsletterBox p {
+			margin-top: 10px;
+			margin-bottom: 10px;
+			line-height: 18px;
+		}
+		#newsletterBox input[type="text"],
+		#newsletterBox input[type="email"] {
+			margin-top: 4px;
+			margin-bottom: 4px;
+			border: 1px rgb( 205, 205, 205 ) solid;
+			padding-left: 10px;
+			padding-right: 10px;
+			width: 166px;
+			line-height: 33px;
+			background-color: rgb( 255, 255, 255 );
+		}
+		#newsletterBox input[type="submit"] {
+			margin-top: 8px;
+			margin-bottom: 10px;
+			border: 1px rgb( 62, 122, 26 ) solid;
+			border-radius: 7px;
+			width: 188px;
+			color: rgb( 255, 255, 255 );
+			line-height: 33px;
+			cursor: pointer;
+			background-color: rgb( 86, 157, 47 );
+			background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb( 86, 157, 47 )), to(rgb( 76, 139, 41 )));
+			background: -webkit-linear-gradient(top, rgb( 86, 157, 47 ), rgb( 76, 139, 41 ));
+			background: -moz-linear-gradient(top, rgb( 86, 157, 47 ), rgb( 76, 139, 41 ));
+			background: -ms-linear-gradient(top, rgb( 86, 157, 47 ), rgb( 76, 139, 41 ));
+			background: -o-linear-gradient(top, rgb( 86, 157, 47 ), rgb( 76, 139, 41 ));
+			/*box-shadow: inset 0 0 5px rgba( 255,255,255, .64 );*/
+			box-shadow: inset 0 1px 0 rgba( 255, 255, 255, .4 );
+		}
+	/**** /NEWSLETTER BOX ****/
+	#mostPopular ul li {
+		border-bottom: 1px rgb( 0, 0, 0 ) dotted;
+		line-height: 20px;
+	}
+/**** /MAIN ****/
+/**** FOOTER ****/
+	#footerOverlayer {
+		background-color: rgb( 42, 42, 42 );
+	}
+	#footer {
+		margin: auto;
+		padding-top: 22px;
+		padding-bottom: 12px;
+		font-size: 12px;
+		color: rgb( 166, 166, 166 );
+		line-height: 20px;
+	}
+	#footer a {
+		color: rgb( 166, 166, 166 );
+	}
+	#footer a:hover {
+		color: rgb( 200, 200, 200 );
+	}
+	#designedBy {
+		color: rgb( 137, 137, 137 );
+		text-align: right;
+	}
+/**** /FOOTER ****/
